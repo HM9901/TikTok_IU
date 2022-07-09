@@ -12,7 +12,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-import routesConfig from '~/config/routes';
+import config from '~/config';
 import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
@@ -31,94 +31,6 @@ const MENU_ITEM = [
         children: {
             title: 'language',
             data: [
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
                 {
                     code: 'en',
                     title: 'English',
@@ -169,7 +81,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={routesConfig.home} className={cx('logo-link')}>
+                <Link to={config.routes.home} className={cx('logo-link')}>
                     <img src={images.logo} alt="tiktok" />
                 </Link>
                 <Search />
@@ -202,7 +114,11 @@ function Header() {
 
                     <Menu items={currentUser ? userMenu : MENU_ITEM}>
                         {currentUser ? (
-                            <Image className={cx('user-avatar')} alt="avatar" />
+                            <Image
+                                className={cx('user-avatar')}
+                                src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/debf82e3bab4230a29e417efe2163c81~c5_300x300.webp?x-expires=1657245600&x-signature=x0uUKp4nqBzGYjB1DyzmoJ1qFmg%3D"
+                                alt="avatar"
+                            />
                         ) : (
                             <button className={cx('more-btn')}>
                                 <FontAwesomeIcon icon={faEllipsisVertical} />
